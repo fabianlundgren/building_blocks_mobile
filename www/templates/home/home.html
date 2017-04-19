@@ -1,9 +1,8 @@
-<ion-view title="Building-blocks">
- <ion-content>
-   <div class="row">
-     <div class="col" ng-if="news" ng-repeat="news in news | limitTo:-5 | orderBy:'time':true">
-       <div class="item item-divider"> {{news.title}} </div>
-     </div>
-   </div>
- </ion-content>
+<ion-view title="Building blockz">
+  <ion-content>
+    <div class="col" ng-if="news" ng-repeat="news in news | limitTo:-5 | orderBy:'time':true">
+      <p>{{news.title}} </p>
+      <p>{{news.description}}</p>
+    </div>
+  </ion-content>
 </ion-view>

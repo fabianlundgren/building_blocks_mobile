@@ -4,7 +4,7 @@ angular.module('building-blocks.services', [])
   return $resource(API_URL + '/news', {}, {
     query: {
       method: 'GET',
-      isArray: false
+      isArray: true
     },
   });
 });
