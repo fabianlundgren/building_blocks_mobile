@@ -33,6 +33,16 @@ angular.module('building-blocks', ['ionic', 'building-blocks.controllers', 'buil
         controller: 'HomeController'
       }
     }
+  })
+
+  .state('tab.facilities', {
+    url: '/facilities',
+    views: {
+      'tab-facilities': {
+        templateUrl: 'templates/facilities/facilities.html',
+        controller: 'FacilityController'
+      }
+    }
   });
 
   $urlRouterProvider.otherwise('/tab/home');

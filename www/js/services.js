@@ -7,4 +7,13 @@ angular.module('building-blocks.services', [])
       isArray: true
     },
   });
+})
+
+.factory('Facility', function($resource, API_URL) {
+  return $resource(API_URL + '/facilities', {}, {
+    query: {
+      method: 'GET',
+      isArray: true
+    },
+  });
 });
