@@ -1,4 +1,4 @@
-angular.module('building-blocks', ['ionic', 'building-blocks.controllers', 'building-blocks.services', 'ngResource'])
+angular.module('building-blocks', ['ionic', 'building-blocks.controllers', 'building-blocks.services', 'ngResource', 'ng-token-auth'])
     .constant('API_URL', 'https://building-blockz.herokuapp.com/api/v1')
 
 .run(function($ionicPlatform) {
@@ -6,11 +6,16 @@ angular.module('building-blocks', ['ionic', 'building-blocks.controllers', 'buil
     if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
       cordova.plugins.Keyboard.disableScroll(true);
-
     }
     if (window.StatusBar) {
       StatusBar.styleDefault();
     }
+  });
+})
+
+.config(function ($authProvider, API_URL) {
+  $authProvider.configure({
+    apiUrl: API_URL
   });
 })
 
@@ -23,10 +28,21 @@ angular.module('building-blocks', ['ionic', 'building-blocks.controllers', 'buil
 
   $stateProvider
 
+  .state('sign_up', {
+       url: '/',
+       templateUrl: 'templates/sign_up/sign_up.html',
+       controller: 'SignUpController'
+     })
+
     .state('tab', {
     url: '/tab',
     abstract: true,
-    templateUrl: 'templates/tabs.html'
+    templateUrl: 'templates/tabs.html',
+    resolve: {
+        auth: function($auth) {
+          return $auth.validateUser();
+        }
+      }
   })
 
     .state('tab.home', {
