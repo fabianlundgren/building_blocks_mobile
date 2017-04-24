@@ -24,14 +24,14 @@ angular.module('building-blocks.controllers', [])
   }
 })
 
-.controller('SignUpController', function($scope, $auth) {
+.controller('UserController', function($scope, $auth, $state, AuthService) {
   $scope.handleRegBtnClick = function() {
     $auth.submitRegistration($scope.registrationForm)
       .then(function(resp) {
-        // handle success response
+        $state.go('app.feed');
       })
       .catch(function(resp) {
-        // handle error response
+        console.log(resp.errors);
       });
   }
 });

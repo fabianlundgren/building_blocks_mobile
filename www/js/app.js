@@ -28,10 +28,10 @@ angular.module('building-blocks', ['ionic', 'building-blocks.controllers', 'buil
 
   $stateProvider
 
-  .state('sign_up', {
+  .state('user', {
        url: '/',
-       templateUrl: 'templates/sign_up/sign_up.html',
-       controller: 'SignUpController'
+       templateUrl: 'templates/user/user.html',
+       controller: 'UserController'
      })
 
     .state('tab', {
