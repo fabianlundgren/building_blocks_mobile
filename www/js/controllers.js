@@ -25,13 +25,13 @@ angular.module('building-blocks.controllers', [])
 })
 
 .controller('UserController', function($scope, $auth, $state, AuthService) {
+  $scope.registrationData = {}
   $scope.handleRegBtnClick = function() {
-    $auth.submitRegistration($scope.registrationForm)
-      .then(function(resp) {
-        $state.go('app.feed');
-      })
-      .catch(function(resp) {
-        console.log(resp.errors);
-      });
+    AuthService.save($scope.registrationData, function(resp){
+      $state.go('tab.home');
+    },
+    function(error){
+      $scope.errors = error.data.errors.full_messages || error.data.errors;
+    })
   }
 });

@@ -28,6 +28,9 @@ angular.module('building-blocks.services', [])
 
 .factory('AuthService', function($resource, API_URL) {
   return $resource(API_URL + '/auth', {}, {
-      method: 'POST'
+    save: {
+        method: 'POST',
+        headers: {'Accept': 'application/json'}
+    }
   });
 });
