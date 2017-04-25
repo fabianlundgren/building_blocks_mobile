@@ -6,7 +6,7 @@
   color: #FFF ;
   text-align: center;
   background: #23c1a0;
-  background: -webkit-linear-gradient(to bottom, #23c1a0, #34e89e);
+  background: linear-gradient(to bottom, #23c1a0, #34e89e);
 }
 
 .top-nav-bar {
