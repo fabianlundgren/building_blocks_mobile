@@ -1,5 +1,6 @@
-<ion-view title='<img class="title-image" src="../img/logoFinal.png" />'>
+<ion-view class="user" title='<img class="title-image" src="../img/logoFinal.png" />'>
   <ion-content class="padding">
+   <p>Welcome to Building Blockz</p>
     <div ng-if="errors" ng-repeat="error in errors">
       <p>{{error}}</p>
     </div>
@@ -13,7 +14,7 @@
       <label class="item item-input">
         <input type="password" name="password_confirmation" ng-model="registrationData.password_confirmation"  placeholder="Password confirmation" />
       </label>
-      <button type="submit" class="button button-full button-dark" ng-click="handleRegBtnClick()">Register</button>
+      <button type="submit" class="button button-full button-light" ng-click="handleRegBtnClick()">Register</button>
       <p class="message">Already registered? <span ng-click="toggleToLgnBtnClick()"><strong>Sign In</strong>  </span></p>
     </div>
 

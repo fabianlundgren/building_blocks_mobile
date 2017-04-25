@@ -1,4 +1,13 @@
 /* Empty. Add your own CSS if you like */
+::-webkit-input-placeholder {
+   text-align: center;
+}
+.user {
+  color: #FFF ;
+  text-align: center;
+  background: #23c1a0;
+  background: -webkit-linear-gradient(to bottom, #23c1a0, #34e89e);
+}
 
 .top-nav-bar {
     color: #FFF ;
