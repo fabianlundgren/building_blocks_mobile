@@ -3,18 +3,29 @@
     <div ng-if="errors" ng-repeat="error in errors">
       <p>{{error}}</p>
     </div>
-    <div class="list">
+    <div class="list" ng-hide="!register">
       <label class="item item-input">
-    <input type="email" name="email" ng-model="registrationData.email" placeholder="Email" />
-  </label>
+        <input type="email" name="email" ng-model="registrationData.email" placeholder="Email" />
+      </label>
       <label class="item item-input">
-    <input type="password" name="password" ng-model="registrationData.password"  placeholder="Password" />
-  </label>
+        <input type="password" name="password" ng-model="registrationData.password"  placeholder="Password" />
+      </label>
       <label class="item item-input">
-    <input type="password" name="password_confirmation" ng-model="registrationData.password_confirmation"  placeholder="Password confirmation" />
-  </label>
+        <input type="password" name="password_confirmation" ng-model="registrationData.password_confirmation"  placeholder="Password confirmation" />
+      </label>
       <button type="submit" class="button button-full button-dark" ng-click="handleRegBtnClick()">Register</button>
+      <p class="message">Already registered? <span ng-click="toggleToLgnBtnClick()"><strong>Sign In</strong>  </span></p>
     </div>
-    <p class="message">Already registered? <a href="#">Sign In</a></p>
+
+    <div class="list" ng-hide="register">
+      <label class="item item-input">
+        <input type="email" name="email" ng-model="loginData.email" placeholder="Email" />
+      </label>
+      <label class="item item-input">
+        <input type="password" name="password" ng-model="loginData.password"  placeholder="Password" />
+      </label>
+      <button type="submit" class="button button-full button-dark" ng-click="handleLgnBtnClick()">Sign in</button>
+      <p class="message">Not registered? <span ng-click="toggleToLgnBtnClick()"> <strong>Create an account</strong>  </span></p>
+    </div>
   </ion-content>
 </ion-view>
