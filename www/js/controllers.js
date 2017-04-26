@@ -54,7 +54,7 @@ angular.module('building-blocks.controllers', [])
     $scope.handleSignOutBtnClick = function() {
       $auth.signOut()
         .then(function(resp) {
-          $state.reload();
+          $state.go('user');
         })
         .catch(function(resp) {
 
