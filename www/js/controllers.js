@@ -38,34 +38,26 @@ angular.module('building-blocks.controllers', [])
     }
 
     $scope.handleLgnBtnClick = function() {
-      //debugger;
       $auth.submitLogin($scope.loginData)
         .then(function(resp) {
-          // handle success response
           $state.go('tab.home');
         })
         .catch(function(error) {
-          // handle error response
-          $scope.errors = error.data;
+          $scope.errors = error.errors;
         });
     }
 
     $scope.toggleToLgnBtnClick = function() {
-      if ($scope.register === true) {
-        $scope.register = false;
-      } else {
-        $scope.register = true;
-      }
-
-    }
+      $scope.register = $scope.register !== true;
+    };
 
     $scope.handleSignOutBtnClick = function() {
       $auth.signOut()
         .then(function(resp) {
-          $state.go('user');
+          $state.reload();
         })
         .catch(function(resp) {
-          $scope.errors = error.data;
+
         });
     };
   });

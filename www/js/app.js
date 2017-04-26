@@ -19,6 +19,10 @@ angular.module('building-blocks', ['ionic', 'building-blocks.controllers', 'buil
     });
   })
 
+  .config(function ($httpProvider) {
+    $httpProvider.defaults.headers.common.Accept = 'application/json';
+  })
+
   .config(function($ionicConfigProvider) {
     $ionicConfigProvider.tabs.position('bottom');
   })
