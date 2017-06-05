@@ -11,6 +11,9 @@ angular.module('building-blocks.controllers', [])
     $scope.go_to_news = function() {
       $state.go('news');
     }
+    $scope.go_to_fel = function() {
+      $state.go('tab.help_request');
+    }
   })
 
   .controller('NewsController', function ($scope, $state, News) {
