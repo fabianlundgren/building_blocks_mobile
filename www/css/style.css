@@ -109,8 +109,8 @@ img {
     color: white;
  }
 
-.contact {
-background:url('../img/contact.background.jpg') no-repeat center center fixed;
+ion-content {
+background:url('../img/exterior_skymning.jpg') no-repeat center center fixed;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         background-size: cover;
@@ -121,6 +121,7 @@ background:url('../img/contact.background.jpg') no-repeat center center fixed;
         -moz-filter: saturate(50%);
         -o-filter: saturate(50%);
         -ms-filter: saturate(50%);
+        background-attachment: fixed;
 }
 
 .card-contact {
@@ -199,3 +200,25 @@ h3 {
   font-family: 'Julius Sans One', sans-serif;
 }
 
+.cards {
+  border: 4px;
+  background: linear-gradient(to bottom, #fff, #eee, #eee, #23c1a0, #23c1a0);
+  border-style: solid;
+  border-width: 1px;
+  border-color: #bbb;
+  border-radius: 6px;
+  box-shadow: 2px 2px 4px #999;
+  vertical-align: top;
+  margin-bottom: 10px !important;
+}
+
+.faci {
+  padding-top: 5px;
+  padding-left: 5px;
+  margin-bottom: 2px;
+  height: 65px;
+}
+
+.space {
+  height: 300px;
+}

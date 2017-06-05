@@ -1,27 +1,76 @@
 <ion-view title='<img class="title-image" src="img/logoFinal.png" />'>
   <ion-content>
-    <div class="index">
-      <img src="img/index_720.jpg" alt="building-blockz">
-      <div class="text" <h1>Brf Kungsklippan</h1>
-      </div>
+    <div class="contact">
+    <div class="space">
+      <h3 class="title">Start</h3><br>
     </div>
-    <div class="brf-text">
-      <p>Brf Kungsklippan was established in 1887, it´s located on Kungsholmen in central Stockholm.<br>
-        Here you can find all the neccessary information <br>
-        about our building which you as a tenant might need.</p>
-    </div>
-    <div class="news-title">NEWS</div>
-    <div class="col" ng-if="news" ng-repeat="news in news | limitTo:-3 | orderBy:'time':true">
-      <div class="list card">
-      <div class="item item-divider">
-        <h2>{{news.title}}</h2>
-        <p>{{news.date}}</p>
+      <div  class="my-col-50">
+        <button class="button" style="background-color:rgba(0,0,0,0)"   ng-click="go_to_news()">
+          <div class="cards" style="width: 158px; height: 150px">
+            <img class="faci" src="img/facilityicon.jpg">
+            <div class="item item-divider fac">
+              <h4 style="text-align: center;">{{facility.name}}</h4>
+            </div>
+            <h5 class="obook"> Nyheter </h5>
+          </div>
+        </button>
       </div>
-      <div class="item item-text-wrap">
-           <p>{{news.description}}</p>
+    <div  class="my-col-50">
+      <button class="button" style="background-color:rgba(0,0,0,0)"   ng-click="go_to_faci()">
+        <div class="cards" style="width: 158px; height: 150px">
+          <img class="faci" src="img/facilityicon.jpg">
+          <div class="item item-divider fac">
+            <h4 style="text-align: center;">{{facility.name}}</h4>
+          </div>
+          <h5 class="obook"> Boka </h5>
         </div>
-      </div>
+      </button>
+    </div>
+    <div  class="my-col-50">
+      <button class="button" style="background-color:rgba(0,0,0,0)"   ng-click="openDatePicker(facility.id)">
+        <div class="cards" style="width: 158px; height: 150px">
+          <img class="faci" src="img/facilityicon.jpg">
+          <div class="item item-divider fac">
+            <h4 style="text-align: center;">{{facility.name}}</h4>
+          </div>
+          <h5 class="obook"> Elfröbrukning </h5>
+        </div>
+      </button>
+    </div>
+    <div  class="my-col-50">
+      <button class="button" style="background-color:rgba(0,0,0,0)"   ng-click="go_to_info()">
+        <div class="cards" style="width: 158px; height: 150px">
+          <img class="faci" src="img/facilityicon.jpg">
+          <div class="item item-divider fac">
+            <h4 style="text-align: center;">{{facility.name}}</h4>
+          </div>
+          <h5 class="obook"> Information </h5>
+        </div>
+      </button>
+    </div>
+    <div  class="my-col-50">
+      <button class="button" style="background-color:rgba(0,0,0,0)"   ng-click="openDatePicker(facility.id)">
+        <div class="cards" style="width: 158px; height: 150px">
+          <img class="faci" src="img/facilityicon.jpg">
+          <div class="item item-divider fac">
+            <h4 style="text-align: center;">{{facility.name}}</h4>
+          </div>
+          <h5 class="obook"> Boka </h5>
+        </div>
+      </button>
+    </div>
+    <div  class="my-col-50">
+      <button class="button" style="background-color:rgba(0,0,0,0)"   ng-click="openDatePicker(facility.id)">
+        <div class="cards" style="width: 158px; height: 150px">
+          <img class="faci" src="img/facilityicon.jpg">
+          <div class="item item-divider fac">
+            <h4 style="text-align: center;">{{facility.name}}</h4>
+          </div>
+          <h5 class="obook"> Boka </h5>
+        </div>
+      </button>
     </div>
     </div>
+
   </ion-content>
 </ion-view>

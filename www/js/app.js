@@ -108,6 +108,13 @@ angular.module('building-blocks', ['ionic', 'building-blocks.controllers', 'buil
         }
       })
 
+
+      .state('news', {
+        url: '/news',
+        templateUrl: 'templates/news/news.html',
+        controller: 'NewsController',
+      })
+
       .state('tab.contact', {
         url: '/contact',
         views: {

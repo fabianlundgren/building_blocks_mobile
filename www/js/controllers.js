@@ -1,6 +1,19 @@
 angular.module('building-blocks.controllers', [])
 
-  .controller('HomeController', function ($scope, News) {
+  .controller('HomeController', function ($scope, $state, News) {
+    $scope.news = News.query();
+    $scope.go_to_faci = function() {
+      $state.go('tab.facilities');
+    }
+    $scope.go_to_info = function() {
+      $state.go('tab.contact');
+    }
+    $scope.go_to_news = function() {
+      $state.go('news');
+    }
+  })
+
+  .controller('NewsController', function ($scope, $state, News) {
     $scope.news = News.query();
   })
 
