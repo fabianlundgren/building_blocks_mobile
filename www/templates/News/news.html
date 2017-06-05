@@ -1,0 +1,17 @@
+<ion-view title='<img class="title-image" src="img/logoFinal.png" />'>
+  <ion-content>
+    <div class="news-title">NEWS</div>
+    <div class="col" ng-if="news" ng-repeat="news in news | limitTo:-3 | orderBy:'time':true">
+      <div class="list card">
+        <div class="item item-divider">
+          <h2>{{news.title}}</h2>
+          <p>{{news.date}}</p>
+        </div>
+        <div class="item item-text-wrap">
+          <p>{{news.description}}</p>
+        </div>
+      </div>
+    </div>
+    </div>
+  </ion-content>
+</ion-view>

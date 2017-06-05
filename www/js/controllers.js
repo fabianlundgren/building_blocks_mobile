@@ -8,6 +8,13 @@ angular.module('building-blocks.controllers', [])
     $scope.go_to_info = function() {
       $state.go('tab.contact');
     }
+    $scope.go_to_news = function() {
+      $state.go('news');
+    }
+  })
+
+  .controller('NewsController', function ($scope, $state, News) {
+    $scope.news = News.query();
   })
 
   .controller('BookController', function ($stateParams, $filter, $scope, $state, Facilities, Book, Booking, Block) {
