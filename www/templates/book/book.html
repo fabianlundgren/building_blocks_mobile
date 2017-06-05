@@ -10,7 +10,7 @@
     </div>
     <div class="col" ng-if="timeslots" ng-repeat="timeslot in timeslots">
       <div class="booking-button">
-        <button class="button" ng-if="!timeslot.bookt" ng-click="openDatePicker(id, date, timeslot.start_time)">
+        <button class="button" style="background-color:rgba(0,0,0,0)" ng-if="!timeslot.bookt" ng-click="openDatePicker(id, date, timeslot.start_time)">
       <div class="unbooked">
        <h4 class="availble"> Boka </h4>
         {{date}} {{timeslot.start_time}} -
@@ -26,5 +26,6 @@
           </div>
         </div>
       </div>
+    <br>
   </ion-content>
 </ion-view>
