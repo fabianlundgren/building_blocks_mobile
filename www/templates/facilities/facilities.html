@@ -1,24 +1,28 @@
 
-<ion-view title='<img class="title-image" src="img/logoFinal.png" />'>
+<ion-view cache-view="false" title='<img class="title-image" src="img/logoFinal.png" />'>
   <ion-content>
-    <h3 class="title">FACILITIES</h3>
+    <h3 class="title">GEMENSAMMA UTRYMMEN</h3><br>
     <div ng-repeat="facility in facilities" width="100%">
       <div  class="my-col-50" ng-if="$even">
-        <div class="card" style="width: 168px; height: 153px">
-          <img class="faci" src="img/facilityicon.jpg">
+        <button class="button" ng-click="openDatePicker(facility.id)">
+        <div class="cards" style="width: 158px; height: 150px">
+          <img class="faci" src="img/facilityicon.png">
           <div class="item item-divider fac">
             <h4 style="text-align: center;">{{facility.name}}</h4>
           </div>
-            <button class="button button-full company-color" ng-click="openDatePicker(facility.id)">Open Bookings</button>
+          <h5 class="obook"> Boka </h5>
         </div>
+        </button>
       </div>
-      <div  class="my-col-50" ng-if="$odd">
-        <div class="card" style="width: 168px; height: 153px">
-          <img class="faci" ng-src="img/facilityicon.jpg">
+      <div class="my-col-50" ng-if="$odd">
+        <button class="button" ng-click="openDatePicker(facility.id)">
+        <div class="cards" style="width: 158px; height: 150px">
+          <img class="faci" ng-src="img/facilityicon.png">
           <div class="item item-divider fac">
             <h4 style="text-align: center;">{{facility.name}}</h4>
           </div>
-          <button class="button button-full company-color" ng-click="openDatePicker(facility.id)">Open Bookings</button>
+          <h5 class="obook"> Boka </h5>
+        </button>
       </div>
     </div>
   </ion-content>

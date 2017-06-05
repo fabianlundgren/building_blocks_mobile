@@ -71,7 +71,6 @@ angular.module('building-blocks.controllers', [])
     function navigateToPage(date) {
       $state.go('book', {booking: {date: date, id: $scope.id}});
     }
-
     var ipObj1 = {
       callback: function (val) {  //Mandatory
         var date = new Date(val);

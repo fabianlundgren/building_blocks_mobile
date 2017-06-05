@@ -2,18 +2,17 @@
   <ion-content class="padding">
     <div class="desc">
       <h3 class="title">{{facilities.name}}</h3>
-      <br>
-      <h5>Description</h5> {{facilities.description}}
-      <h5>Rules</h5> {{facilities.rules}}
+      <h5>Beskrivning</h5> {{facilities.description}}
+      <h5>Regler</h5> {{facilities.rules}}
       <p ng-if="error">{{error}}</p>
       <br>
       <p ng-if="message">{{message}}</p>
     </div>
     <div class="col" ng-if="timeslots" ng-repeat="timeslot in timeslots">
       <div class="booking-button">
-        <button class="card button button-full company-color" ng-if="!timeslot.bookt" ng-click="openDatePicker(id, date, timeslot.start_time)">
-      <div class="availble">
-       <h4 class="availble"> Book </h4>
+        <button class="button" ng-if="!timeslot.bookt" ng-click="openDatePicker(id, date, timeslot.start_time)">
+      <div class="unbooked">
+       <h4 class="availble"> Boka </h4>
         {{date}} {{timeslot.start_time}} -
         {{timeslot.end_time}}
       </div>
@@ -21,8 +20,9 @@
       </button>
         <div ng-if="timeslot.bookt">
           <br>
-          <div class="item item-divider booked">
-            {{timeslot.bookt}}<br> {{date}} {{timeslot.start_time}} - {{timeslot.end_time}}
+          <div class="booked">
+            <h4 class="availble"> Bookad </h4>
+            {{date}} {{timeslot.start_time}} - {{timeslot.end_time}}
           </div>
         </div>
       </div>
