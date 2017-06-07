@@ -88,7 +88,12 @@ img {
   font-family: 'Droid', sans-serif;
 }
 
-
+.my-col-33 {
+  float: left;
+  width: 33%;
+  height: 190px;
+  padding-bottom: 20px !important;
+}
 
 .my-col-50 {
   float: left;
@@ -96,7 +101,6 @@ img {
   height: 190px;
   padding-bottom: 20px !important;
 }
-
 
 .company-color {
     background-color: #23c1a0;
@@ -133,7 +137,6 @@ background:url('../img/exterior_skymning.jpg') no-repeat center center fixed;
   background-size: cover;
   height: 600px;
 }
-
 
 .booked {
   padding-top: 10px;
@@ -183,7 +186,6 @@ background:url('../img/exterior_skymning.jpg') no-repeat center center fixed;
   border: 0px;
   padding: 10px 10px 10px 10px;
   border-radius: 6px;
-
 }
 
 h5 {
@@ -197,7 +199,6 @@ h3 {
 .input-label {
   font-family: 'Julius Sans One', sans-serif;
 }
-
 
 .cards {
   border: 4px;
@@ -228,7 +229,6 @@ h3 {
   margin-bottom: 2px;
   height: 65px;
 }
-
 
 .pil {
   height: 24px;
