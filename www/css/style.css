@@ -186,6 +186,10 @@ background:url('../img/exterior_skymning.jpg') no-repeat center center fixed;
 
 }
 
+h5 {
+  color: #fff;
+}
+
 h3 {
   font-family: 'Julius Sans One', sans-serif;
 }
