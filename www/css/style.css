@@ -28,7 +28,7 @@ img {
 }
 
 .text {
-    color: #FFF ;
+    color: #23c1a0 ;
     font-size: 30px ;
     left: 0;
     position:absolute;
@@ -49,20 +49,8 @@ img {
   align-content: center;
 }
 
-.cards {
-  border: 4px;
-  background: linear-gradient(to bottom, #fff, #eee, #eee, #23c1a0, #23c1a0);
-  border-style: solid;
-  border-width: 1px;
-  border-color: #bbb;
-  border-radius: 6px;
-  box-shadow: 1px 1px 6px #444;
-  vertical-align: top;
-  margin-bottom: 10px !important;
-}
-
 .obook {
-  color: #fff;
+  color: #23c1a0;
 }
 
 .title {
@@ -97,9 +85,11 @@ img {
 
 .my-col-50 {
   float: left;
-  width: 50%;
+  width: 40%;
   height: 190px;
-  padding-bottom: 20px !important;
+  padding-bottom: 10px !important;
+  padding-left: 30px;
+  margin-top: 50px;
 }
 
 .company-color {
@@ -201,8 +191,8 @@ h3 {
 }
 
 .cards {
+  background: linear-gradient(to bottom, #fff, #fff, #fff, #fff, #fff);
   border: 4px;
-  background: linear-gradient(to bottom, #fff, #eee, #eee, #23c1a0, #23c1a0);
   border-style: solid;
   border-width: 1px;
   border-color: #bbb;
