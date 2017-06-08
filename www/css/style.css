@@ -28,7 +28,7 @@ img {
 }
 
 .text {
-    color: #FFF ;
+    color: #23c1a0 ;
     font-size: 30px ;
     left: 0;
     position:absolute;
@@ -49,20 +49,8 @@ img {
   align-content: center;
 }
 
-.cards {
-  border: 4px;
-  background: linear-gradient(to bottom, #fff, #eee, #eee, #23c1a0, #23c1a0);
-  border-style: solid;
-  border-width: 1px;
-  border-color: #bbb;
-  border-radius: 6px;
-  box-shadow: 1px 1px 6px #444;
-  vertical-align: top;
-  margin-bottom: 10px !important;
-}
-
 .obook {
-  color: #fff;
+  color: #23c1a0;
 }
 
 .title {
@@ -88,15 +76,21 @@ img {
   font-family: 'Droid', sans-serif;
 }
 
-
-
-.my-col-50 {
+.my-col-33 {
   float: left;
-  width: 50%;
+  width: 33%;
   height: 190px;
   padding-bottom: 20px !important;
 }
 
+.my-col-50 {
+  float: left;
+  width: 40%;
+  height: 190px;
+  padding-bottom: 10px !important;
+  padding-left: 30px;
+  margin-top: 50px;
+}
 
 .company-color {
     background-color: #23c1a0;
@@ -133,7 +127,6 @@ background:url('../img/exterior_skymning.jpg') no-repeat center center fixed;
   background-size: cover;
   height: 600px;
 }
-
 
 .booked {
   padding-top: 10px;
@@ -183,7 +176,10 @@ background:url('../img/exterior_skymning.jpg') no-repeat center center fixed;
   border: 0px;
   padding: 10px 10px 10px 10px;
   border-radius: 6px;
+}
 
+h5 {
+  color: #fff;
 }
 
 h3 {
@@ -194,10 +190,9 @@ h3 {
   font-family: 'Julius Sans One', sans-serif;
 }
 
-
 .cards {
+  background: linear-gradient(to bottom, #fff, #fff, #fff, #fff, #fff);
   border: 4px;
-  background: linear-gradient(to bottom, #fff, #eee, #eee, #23c1a0, #23c1a0);
   border-style: solid;
   border-width: 1px;
   border-color: #bbb;
@@ -224,7 +219,6 @@ h3 {
   margin-bottom: 2px;
   height: 65px;
 }
-
 
 .pil {
   height: 24px;
