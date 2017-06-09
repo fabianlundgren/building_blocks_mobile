@@ -28,7 +28,7 @@ img {
 }
 
 .text {
-    color: #FFF ;
+    color: black;
     font-size: 30px ;
     left: 0;
     position:absolute;
@@ -94,7 +94,7 @@ img {
   float: left;
   width: 50%;
   height: 190px;
-  padding-bottom: 20px !important;
+ padding-bottom: 20px !important;
 }
 
 
