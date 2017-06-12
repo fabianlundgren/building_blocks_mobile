@@ -9,8 +9,8 @@
   <ion-content class="padding">
     <div class="desc">
       <h3 class="title">{{facilities.name}}</h3>
-      <h5>Beskrivning</h5> {{facilities.description}}
-      <h5>Regler</h5> {{facilities.rules}}
+      <h5 class="bobe">Beskrivning</h5> {{facilities.description}}
+      <h5 class="bobe">Regler</h5> {{facilities.rules}}
       <p ng-if="error">{{error}}</p>
       <br>
       <p ng-if="message">{{message}}</p>
@@ -28,7 +28,7 @@
         <div ng-if="timeslot.bookt">
           <br>
           <div class="booked">
-            <h4 class="availble"> Bokad </h4>
+            <h4 class="unavailble"> Bokad </h4>
             {{date}} {{timeslot.start_time}} - {{timeslot.end_time}}
           </div>
         </div>

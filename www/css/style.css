@@ -129,12 +129,12 @@ background:url('../img/exterior_skymning.jpg') no-repeat center center fixed;
 }
 
 .booked {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   background-color: #999;
-  color: #ffffff;
+  color: #D6D6D6;
   text-align: center;
-  width: 89% ;
+  width: 305px ;
   margin-left: auto;
   margin-right: auto;
   border-radius: 6px;
@@ -142,21 +142,33 @@ background:url('../img/exterior_skymning.jpg') no-repeat center center fixed;
 }
 
 .unbooked {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   margin-left: -4px;
   background-color: #23c1a0;
-  color: #ffffff;
+  color: #E8E8E8;
   text-align: center;
   width: 305px ;
   border-radius: 6px;
-  box-shadow: 1px 1px 6px #444;
+  box-shadow: 1px 1px 6px #222;
   margin-bottom: -15px !important;
   vertical-align: top;
 }
 
 .availble {
   color: #fff;
+  margin-bottom: -8px !important;
+}
+
+.unavailble {
+  color: #D6D6D6;
+  margin-bottom: 1px !important;
+}
+
+.bobe {
+  color: #fff;
+  font-weight: bold;
+  margin-bottom: 2px !important;
 }
 
 .desc {
@@ -173,9 +185,8 @@ background:url('../img/exterior_skymning.jpg') no-repeat center center fixed;
 .booking-button {
   margin-top: 0px;
   margin-bottom: 0px;
-  border: 0px;
+  border: 3px;
   padding: 10px 10px 10px 10px;
-  border-radius: 6px;
 }
 
 h5 {
