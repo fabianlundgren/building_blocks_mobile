@@ -149,9 +149,10 @@ background:url('../img/exterior_skymning.jpg') no-repeat center center fixed;
   color: #E8E8E8;
   text-align: center;
   width: 305px ;
+  height: 70px;
   border-radius: 6px;
   box-shadow: 1px 1px 6px #222;
-  margin-bottom: -15px !important;
+
   vertical-align: top;
 }
 
@@ -183,6 +184,7 @@ background:url('../img/exterior_skymning.jpg') no-repeat center center fixed;
 }
 
 .booking-button {
+  width: 89% ;
   margin-top: 0px;
   margin-bottom: 0px;
   border: 3px;
