@@ -123,7 +123,7 @@ angular.module('building-blocks.controllers', [])
         navigateToPage(date);
       },
       disabledDates: [],
-      from: new Date(2017, 2, 26), //Optional
+      from: new Date(), //Optional
       to: new Date(2019, 10, 30), //Optional
       inputDate: new Date(),      //Optional
       mondayFirst: true,          //Optional
@@ -131,6 +131,7 @@ angular.module('building-blocks.controllers', [])
       closeOnSelect: false,       //Optional
       templateType: 'popup'       //Optional
     };
+
     $scope.openDatePicker = function (id) {
       $scope.id = id;
       ionicDatePicker.openDatePicker(ipObj1)
