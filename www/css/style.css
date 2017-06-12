@@ -242,6 +242,14 @@ h3 {
   left: -90px;
 }
 
+.back2 {
+  width: 100%;
+  position: relative;
+  top: 5px;
+  left: -160px;
+  z-index: 1255;
+}
+
 .title-image2 {
   height: 25px;
   position: relative;
