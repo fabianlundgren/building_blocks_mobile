@@ -80,7 +80,8 @@ img {
   float: left;
   width: 33%;
   height: 190px;
- padding-bottom: 20px !important;
+  padding-bottom: 20px !important;
+  padding-left: -20px;
 }
 
 .my-col-50 {
@@ -219,7 +220,7 @@ h3 {
 }
 
 .space {
-  height: 300px;
+  height: 280px;
 }
 
 .faci2 {
@@ -240,6 +241,14 @@ h3 {
   left: -90px;
 }
 
+.signout {
+  width: 100%;
+  position: relative;
+  left: 65px;
+  color: #fff;
+  font-weight: bold;
+}
+
 .back2 {
   width: 100%;
   position: relative;
@@ -252,6 +261,12 @@ h3 {
   height: 25px;
   position: relative;
   left: -25px;
+}
+
+.title-image3 {
+  height: 25px;
+  position: relative;
+  left: 35px;
 }
 
 .coli {

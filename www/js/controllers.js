@@ -1,6 +1,6 @@
 angular.module('building-blocks.controllers', [])
 
-  .controller('HomeController', function ($scope, $state, News) {
+  .controller('HomeController', function ($scope,$auth, $state, AuthService, News) {
     $scope.news = News.query();
     $scope.go_to_faci = function() {
       $state.go('facilities');
@@ -15,24 +15,32 @@ angular.module('building-blocks.controllers', [])
       $state.go('help_request');
     }
     $scope.go_to_home = function() {
-      $state.go('tab.home');
+      $state.go('home');
     }
     $scope.go_to_el = function() {
       $state.go('el');
     }
+    $scope.handleSignOutBtnClick = function () {
+      $auth.signOut()
+        .then(function (resp) {
+          $state.go('user');
+        })
+        .catch(function (resp) {
+        });
+    };
   })
 
   .controller('NewsController', function ($scope, $state, News) {
     $scope.news = News.query();
     $scope.go_to_home = function() {
-      $state.go('tab.home');
+      $state.go('home');
     }
   })
 
 
   .controller('ElController', function ($scope, $state) {
     $scope.go_to_home = function() {
-      $state.go('tab.home');
+      $state.go('home');
     }
     $scope.colors = ['#45b7cd', '#ff6384', '#ff8e72'];
 
@@ -137,13 +145,13 @@ angular.module('building-blocks.controllers', [])
       ionicDatePicker.openDatePicker(ipObj1)
     };
     $scope.go_to_home = function() {
-      $state.go('tab.home');
+      $state.go('home');
     }
   })
 
   .controller('HelpRequestController', function ($scope, $location, $state, HelpRequest) {
     $scope.go_to_home = function() {
-      $state.go('tab.home');
+      $state.go('home');
     }
     $scope.error = null;
     $scope.help_request = {};
@@ -163,7 +171,7 @@ angular.module('building-blocks.controllers', [])
     $scope.register = true;
     $scope.handleRegBtnClick = function () {
       AuthService.save($scope.registrationData, function (resp) {
-          $state.go('tab.home');
+          $state.go('home');
         },
         function (error) {
           $scope.errors = error.data.errors.full_messages || error.data.errors;
@@ -173,7 +181,7 @@ angular.module('building-blocks.controllers', [])
     $scope.handleLgnBtnClick = function () {
       $auth.submitLogin($scope.loginData)
         .then(function (resp) {
-          $state.go('tab.home');
+          $state.go('home');
         })
         .catch(function (error) {
           $scope.errors = error.errors;

@@ -9,7 +9,7 @@
   <ion-content>
     <h3 class="title">GEMENSAMMA UTRYMMEN</h3><br>
     <div ng-repeat="facility in facilities" width="100%">
-      <div  class="my-col-50" ng-if="$even">
+      <div  class="my-col-50">
         <button class="button" style="background-color:rgba(0,0,0,0)" ng-click="openDatePicker(facility.id)">
         <div class="cards" style="width: 130px; height: 130px">
           <img class="faci" src="img/facilityicon.png">
@@ -17,13 +17,6 @@
         </div>
         </button>
       </div>
-      <div class="my-col-50" ng-if="$odd">
-        <button class="button" style="background-color:rgba(0,0,0,0)" ng-click="openDatePicker(facility.id)">
-        <div class="cards" style="width: 130px; height: 130px">
-          <img class="faci" ng-src="img/facilityicon.png">
-          <h5 class="obook"> {{facility.name}} </h5>
-        </button>
       </div>
-    </div>
   </ion-content>
 </ion-view>

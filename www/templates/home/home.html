@@ -1,11 +1,15 @@
-<ion-view title='<img class="title-image" src="img/logoFinal.png" />' >
+<ion-view>
+  <ion-nav-title>
+    <img class="title-image3" src="img/logoFinal.png" />
+      <button class="button button-clear button-positive" ng-click="handleSignOutBtnClick()"> <div class="signout">Logga ut</div></button>
+  </ion-nav-title>
   <ion-content>
     <div class="contact">
     <div class="space">
       <h3 class="title">STARTSIDA</h3><br>
     </div>
       <div  class="my-col-33">
-        <button class="button" style="background-color:rgba(0,0,0,0)"   ng-click="go_to_news()">
+        <button class="button" style="background-color:rgba(0,0,0,0);width: 100px; height: 135px"   ng-click="go_to_news()">
           <div class="cards" style="width: 100px; height: 135px">
             <img class="faci2" src="img/nyheter.png">
             <h5 class="obook"> Nyheter </h5>
@@ -13,7 +17,7 @@
         </button>
       </div>
     <div  class="my-col-33">
-      <button class="button" style="background-color:rgba(0,0,0,0)"   ng-click="go_to_faci()">
+      <button class="button" style="background-color:rgba(0,0,0,0);width: 100px; height: 135px"   ng-click="go_to_faci()">
         <div class="cards" style="width: 100px; height: 135px">
           <img class="faci2" src="img/bokning.png">
           <h5 class="obook"> Boka </h5>
@@ -21,7 +25,7 @@
       </button>
     </div>
     <div  class="my-col-33">
-      <button class="button" style="background-color:rgba(0,0,0,0)"   ng-click="go_to_el()">
+      <button class="button" style="background-color:rgba(0,0,0,0);width: 100px; height: 135px"   ng-click="go_to_el()">
         <div class="cards" style="width: 100px; height: 135px">
           <img class="faci2" src="img/elforbrukning.png">
           <h5 class="obook"> Elförbrukning </h5>
@@ -53,6 +57,5 @@
       </button>
     </div>
     </div>
-
   </ion-content>
 </ion-view>

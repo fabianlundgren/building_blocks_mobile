@@ -77,14 +77,10 @@ angular.module('building-blocks', ['ionic', 'building-blocks.controllers', 'buil
         controller: 'ElController',
       })
 
-      .state('tab.home', {
+      .state('home', {
         url: '/home',
-        views: {
-          'tab-home': {
             templateUrl: 'templates/home/home.html',
             controller: 'HomeController'
-          }
-        }
       })
 
       .state('book', {
@@ -121,6 +117,6 @@ angular.module('building-blocks', ['ionic', 'building-blocks.controllers', 'buil
             controller: 'HomeController'
       });
 
-    $urlRouterProvider.otherwise('/tab/home');
+    $urlRouterProvider.otherwise('/home');
 
   });
