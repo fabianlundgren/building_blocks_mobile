@@ -130,16 +130,17 @@ background:url('../img/exterior_skymning.jpg') no-repeat center center fixed;
 
 .booked {
   padding-top: 5px;
-  padding-bottom: 5px;
+  padding-bottom: 8px;
   background-color: #999;
   color: #D6D6D6;
   text-align: center;
-  width: 89%;
+  width: 92%;
   margin-left: auto;
   margin-right: auto;
   border-radius: 6px;
-  margin-top: 8px !important;
-  margin-bottom: 8px !important
+  margin-top: 5px !important;
+  margin-bottom: 5px !important;
+  box-shadow: inset 1px 1px 4px #555;
 }
 
 .unbooked {
@@ -150,8 +151,8 @@ background:url('../img/exterior_skymning.jpg') no-repeat center center fixed;
   color: #fff;
   width: 88%;
   border-radius: 6px;
-  margin-top: 8px !important;
-  margin-bottom: 8px !important;
+  margin-top: 12px !important;
+  margin-bottom: 12px !important;
   box-shadow: 2px 2px 4px #333;
 }
 
