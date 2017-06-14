@@ -244,9 +244,11 @@ h3 {
 .signout {
   width: 100%;
   position: relative;
-  left: 65px;
+  top: 5px;
+  left: 90px;
   color: #fff;
   font-weight: bold;
+  opacity: 0.6;
 }
 
 .back2 {
@@ -266,7 +268,7 @@ h3 {
 .title-image3 {
   height: 25px;
   position: relative;
-  left: 35px;
+  left: 15px;
 }
 
 .coli {
@@ -274,3 +276,6 @@ h3 {
 }
 
 
+.close {
+  height: 24px;
+}
