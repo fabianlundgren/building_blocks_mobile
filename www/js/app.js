@@ -83,6 +83,12 @@ angular.module('building-blocks', ['ionic', 'building-blocks.controllers', 'buil
             controller: 'HomeController'
       })
 
+      .state('doc', {
+        url: '/doc',
+        templateUrl: 'templates/doc/doc.html',
+        controller: 'HomeController'
+      })
+
       .state('book', {
 
         url: '/book/{booking:json}',
