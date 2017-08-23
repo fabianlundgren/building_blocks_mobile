@@ -33,6 +33,17 @@ angular.module('building-blocks.controllers', [])
     };
   })
 
+  .controller('DocController', function ($scope, $state) {
+    $scope.go_to_home = function() {
+      $state.go('home');
+    }
+
+    $scope.go_to_pdf = function() {
+      $state.go('http://www.brfsoderkisen.se/wp-content/uploads/2016/10/BRF-Söderkisen-2016-final-signed-2.pdf');
+    }
+  })
+
+
   .controller('NewsController', function ($scope, $state, News) {
     $scope.news = News.query();
     $scope.go_to_home = function() {
