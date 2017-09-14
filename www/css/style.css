@@ -53,8 +53,16 @@ img {
   color: #23c1a0;
 }
 
+
 .title {
   color: #fff ;
+  padding-top: 5px;
+  text-align: center;
+  font-family: 'Droid', sans-serif;
+}
+
+.title-black {
+  color: #555 ;
   padding-top: 5px;
   text-align: center;
   font-family: 'Droid', sans-serif;
@@ -122,11 +130,7 @@ background:url('../img/exterior_skymning.jpg') no-repeat center center fixed;
 }
 
 .help-request {
-  background:url('../img/icon-message.png') no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  height: 600px;
+  background: #fff;
 }
 
 .booked {
@@ -193,11 +197,11 @@ h5 {
 }
 
 h3 {
-  font-family: 'Julius Sans One', sans-serif;
+  font-family: 'Droid', sans-serif;
 }
 
 .input-label {
-  font-family: 'Julius Sans One', sans-serif;
+  font-family: 'Droid', sans-serif;
 }
 
 .cards {
@@ -282,4 +286,9 @@ h3 {
 
 .doughnut {
   color: #23c1a0;
+}
+
+.message {
+  color: #666;
+  background-color:rgba(255,255,255,0.4);
 }

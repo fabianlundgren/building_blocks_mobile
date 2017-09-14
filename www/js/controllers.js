@@ -1,7 +1,8 @@
 angular.module('building-blocks.controllers', [])
 
-  .controller('HomeController', function ($scope,$auth, $state, AuthService, News) {
-    $scope.news = News.query();
+  .controller('HomeController', function ($scope, $auth, $state, Buildings, AuthService) {
+    $scope.buildings = Buildings.query();
+    console.log($scope.buildings.name);
     $scope.go_to_faci = function() {
       $state.go('facilities');
     }

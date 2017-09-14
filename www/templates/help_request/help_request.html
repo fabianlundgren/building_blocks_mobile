@@ -6,18 +6,17 @@
   </button>
     <img class="title-image2" src="img/logoFinal.png" />
   </ion-nav-title>
-  <ion-content>
-    <h3 class="title">MESSAGE</h3>
-    <p ng-if="error">{{error}}</p>
-    <p ng-if="message">{{message}}</p>
-    <div class="help-request">
+  <ion-content class="help-request">
+    <h3 class="title-black">MESSAGE</h3>
+    <p ng-if="error">&nbsp &nbsp {{error}}</p>
+    <p ng-if="message">&nbsp &nbsp {{message}}</p>
+    <div class="inner">
           <label class="item item-input">
            <span class="input-label">Title</span>
            <input type="text" ng-model="help_request.title">
          </label>
           <label class="item item-input">
-           <span class="input-label">Message</span>
-           <input type="text" ng-model="help_request.message">
+        <textarea rows="4" col="12" required ng-model="help_request.message" placeholder="Message"></textarea>
          </label>
           <ul class="list">
             <li class="item item-toggle">
