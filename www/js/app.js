@@ -1,6 +1,6 @@
 angular.module('building-blocks', ['ionic', 'building-blocks.controllers', 'building-blocks.services', 'ngResource', 'ng-token-auth', 'ionic-datepicker', 'chart.js'])
-    //.constant('API_URL', 'http://localhost:3000/api/v1')
-    .constant('API_URL', 'https://building-blockz.herokuapp.com/api/v1')
+    .constant('API_URL', 'http://localhost:3000/api/v1')
+    // .constant('API_URL', 'https://building-blockz.herokuapp.com/api/v1')
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -77,14 +77,16 @@ angular.module('building-blocks', ['ionic', 'building-blocks.controllers', 'buil
         controller: 'ElController',
       })
 
-      .state('tab.home', {
+      .state('home', {
         url: '/home',
-        views: {
-          'tab-home': {
             templateUrl: 'templates/home/home.html',
             controller: 'HomeController'
-          }
-        }
+      })
+
+      .state('doc', {
+        url: '/doc',
+        templateUrl: 'templates/doc/doc.html',
+        controller: 'DocController'
       })
 
       .state('book', {
@@ -120,6 +122,6 @@ angular.module('building-blocks', ['ionic', 'building-blocks.controllers', 'buil
             controller: 'HomeController'
       });
 
-    $urlRouterProvider.otherwise('/tab/home');
+    $urlRouterProvider.otherwise('/');
 
   });

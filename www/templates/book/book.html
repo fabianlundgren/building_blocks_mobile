@@ -1,34 +1,32 @@
 <ion-view>
   <ion-nav-title> <button class="button" style="background-color:rgba(0,0,0,0)"  ng-click="go_to_faci()">
-    <div class="back">
-      <img class="pil" src="img/triangular-arrow-ar.png" />
-    </div>
-  </button>
-    <img class="title-image2" src="img/logoFinal.png" />
-  </ion-nav-title>
+      <div class="back">
+        <img class="pil" src="img/triangular-arrow-ar.png" />
+      </div>
+    </button>
+      <img class="title-image2" src="img/logoFinal.png" />
+    </ion-nav-title>
   <ion-content class="padding">
     <div class="desc">
       <h3 class="title">{{facilities.name}}</h3>
-      <h5>Beskrivning</h5> {{facilities.description}}
-      <h5>Regler</h5> {{facilities.rules}}
+      <h5 class="bobe">Beskrivning</h5> {{facilities.description}}
+      <h5 class="bobe">Regler</h5> {{facilities.rules}}
       <p ng-if="error">{{error}}</p>
       <br>
-      <p ng-if="message">{{message}}</p>
+      <p class="bobe" ng-if="message">{{messageex}}{{message}}</p>
     </div>
-    <div class="col" ng-if="timeslots" ng-repeat="timeslot in timeslots">
-      <div class="booking-button">
-        <button class="button" style="background-color:rgba(0,0,0,0)" ng-if="!timeslot.bookt" ng-click="openDatePicker(id, date, timeslot.start_time)">
+    <div class="coli" ng-if="timeslots" ng-repeat="timeslot in timeslots">
+        <button class="button" style="background-color:rgba(0,0,0,0); width: 113%;" ng-if="!timeslot.bookt" ng-click="openDatePicker(id, date, timeslot.start_time)">
       <div class="unbooked">
        <h4 class="availble"> Boka </h4>
         {{date}} {{timeslot.start_time}} -
         {{timeslot.end_time}}
       </div>
-    </div>
       </button>
         <div ng-if="timeslot.bookt">
           <br>
           <div class="booked">
-            <h4 class="availble"> Bookad </h4>
+            <h4 class="unavailble"> Bokad </h4>
             {{date}} {{timeslot.start_time}} - {{timeslot.end_time}}
           </div>
         </div>

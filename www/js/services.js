@@ -9,6 +9,14 @@ angular.module('building-blocks.services', [])
     });
   })
 
+  .factory('Buildings', function($resource, API_URL) {
+    return $resource(API_URL + '/buildings', {}, {
+      query: {
+        method: 'GET',
+      }
+    });
+  })
+
   .factory('HelpRequest', function($resource, API_URL) {
     return $resource(API_URL + '/help_requests', {}, {
       save: {

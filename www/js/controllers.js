@@ -1,7 +1,8 @@
 angular.module('building-blocks.controllers', [])
 
-  .controller('HomeController', function ($scope, $state, News) {
-    $scope.news = News.query();
+  .controller('HomeController', function ($scope, $auth, $state, Buildings, AuthService) {
+    $scope.buildings = Buildings.query();
+    console.log($scope.buildings.name);
     $scope.go_to_faci = function() {
       $state.go('facilities');
     }
@@ -15,46 +16,56 @@ angular.module('building-blocks.controllers', [])
       $state.go('help_request');
     }
     $scope.go_to_home = function() {
-      $state.go('tab.home');
+      $state.go('home');
     }
     $scope.go_to_el = function() {
       $state.go('el');
     }
+    $scope.go_to_doc = function() {
+      $state.go('doc');
+    }
+    $scope.handleSignOutBtnClick = function () {
+      $auth.signOut()
+        .then(function (resp) {
+          $state.go('user');
+        })
+        .catch(function (resp) {
+        });
+    };
   })
+
+  .controller('DocController', function ($scope, $state) {
+    $scope.go_to_home = function() {
+      $state.go('home');
+    }
+
+    $scope.go_to_pdf = function() {
+      $state.go('http://www.brfsoderkisen.se/wp-content/uploads/2016/10/BRF-Söderkisen-2016-final-signed-2.pdf');
+    }
+  })
+
 
   .controller('NewsController', function ($scope, $state, News) {
     $scope.news = News.query();
     $scope.go_to_home = function() {
-      $state.go('tab.home');
+      $state.go('home');
     }
   })
 
 
   .controller('ElController', function ($scope, $state) {
     $scope.go_to_home = function() {
-      $state.go('tab.home');
+      $state.go('home');
     }
-    $scope.colors = ['#45b7cd', '#ff6384', '#ff8e72'];
+    $scope.colors = ['#23c1a0', '#ffffff'];
 
-    $scope.labels = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+
+
+    $scope.labels = ['Förbrukning', 'Tuesday'];
     $scope.data = [
-      [65, -59, 80, 81, -56, 55, -40],
-      [28, 48, -40, 19, 86, 27, 90]
+      [65],[40],
     ];
-    $scope.datasetOverride = [
-      {
-        label: "Bar chart",
-        borderWidth: 1,
-        type: 'bar'
-      },
-      {
-        label: "Line chart",
-        borderWidth: 3,
-        hoverBackgroundColor: "rgba(255,99,132,0.4)",
-        hoverBorderColor: "rgba(255,99,132,1)",
-        type: 'line'
-      }
-    ];
+
 
   })
 
@@ -80,7 +91,8 @@ angular.module('building-blocks.controllers', [])
     $scope.dateandtime = $filter('date')($stateParams.booking.date, 'yyyy-MM-dd');
     $scope.openDatePicker = function (id, date, start_time) {
       Booking.save({facility_id: id, start_time: date +" "+start_time, name: "tenant"  }, function (response) {
-        $scope.message = response.message;
+        $scope.message = $scope.facilities.name;
+        $scope.messageex = 'Tack för din bokning av ';
         Book.query($stateParams.booking, function(response) {
           $scope.timeslots = response;
           Facilities.query($stateParams.booking, function(response) {
@@ -92,7 +104,7 @@ angular.module('building-blocks.controllers', [])
             });
           })
         });
-        $state.go('facilities');
+
       });
     };
 
@@ -122,7 +134,7 @@ angular.module('building-blocks.controllers', [])
         navigateToPage(date);
       },
       disabledDates: [],
-      from: new Date(2017, 2, 26), //Optional
+      from: new Date(), //Optional
       to: new Date(2019, 10, 30), //Optional
       inputDate: new Date(),      //Optional
       mondayFirst: true,          //Optional
@@ -130,18 +142,19 @@ angular.module('building-blocks.controllers', [])
       closeOnSelect: false,       //Optional
       templateType: 'popup'       //Optional
     };
+
     $scope.openDatePicker = function (id) {
       $scope.id = id;
       ionicDatePicker.openDatePicker(ipObj1)
     };
     $scope.go_to_home = function() {
-      $state.go('tab.home');
+      $state.go('home');
     }
   })
 
   .controller('HelpRequestController', function ($scope, $location, $state, HelpRequest) {
     $scope.go_to_home = function() {
-      $state.go('tab.home');
+      $state.go('home');
     }
     $scope.error = null;
     $scope.help_request = {};
@@ -161,7 +174,7 @@ angular.module('building-blocks.controllers', [])
     $scope.register = true;
     $scope.handleRegBtnClick = function () {
       AuthService.save($scope.registrationData, function (resp) {
-          $state.go('tab.home');
+          $state.go('home');
         },
         function (error) {
           $scope.errors = error.data.errors.full_messages || error.data.errors;
@@ -171,7 +184,7 @@ angular.module('building-blocks.controllers', [])
     $scope.handleLgnBtnClick = function () {
       $auth.submitLogin($scope.loginData)
         .then(function (resp) {
-          $state.go('tab.home');
+          $state.go('home');
         })
         .catch(function (error) {
           $scope.errors = error.errors;
