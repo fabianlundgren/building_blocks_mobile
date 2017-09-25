@@ -133,6 +133,11 @@ background:url('../img/exterior_skymning.jpg') no-repeat center center fixed;
   background: #fff;
 }
 
+.book {
+  background: #fff;
+  color: #000;
+}
+
 .booked {
   padding-top: 5px;
   padding-bottom: 8px;
@@ -143,8 +148,23 @@ background:url('../img/exterior_skymning.jpg') no-repeat center center fixed;
   margin-left: auto;
   margin-right: auto;
   border-radius: 6px;
-  margin-top: 5px !important;
-  margin-bottom: 5px !important;
+  margin-top: 12px !important;
+  margin-bottom: 12px !important;
+  box-shadow: inset 1px 1px 4px #555;
+}
+
+.bookedmax {
+  padding-top: 5px;
+  padding-bottom: 8px;
+  background-color: #D0CFCF;
+  color: #fff;
+  text-align: center;
+  width: 92%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 6px;
+  margin-top: 12px !important;
+  margin-bottom: 12px !important
   box-shadow: inset 1px 1px 4px #555;
 }
 
@@ -170,6 +190,11 @@ background:url('../img/exterior_skymning.jpg') no-repeat center center fixed;
 
 .unavailble {
   color: #D6D6D6;
+  margin-bottom: 1px !important;
+}
+
+.unavailblemax {
+  color: #fff;
   margin-bottom: 1px !important;
 }
 
@@ -224,7 +249,7 @@ h3 {
 }
 
 .space {
-  height: 280px;
+  height: 260px;
 }
 
 .faci2 {
@@ -291,4 +316,27 @@ h3 {
 .message {
   color: #666;
   background-color:rgba(255,255,255,0.4);
+}
+
+.tag {
+    width:20px;
+    height:20px;
+    border-radius:50px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #EAEAEA;
+    font-size:16px;
+    color:#fff;
+    line-height:10px;
+    text-align:center;
+    background: red;
+    position: fixed;
+    margin-top: -8px;
+    margin-left: 4px;
+    box-shadow: 1px 1px 3px #666;
+}
+
+.bookcount {
+  color: #fff;
+  margin-top: 1px;
 }

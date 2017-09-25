@@ -34,6 +34,14 @@ angular.module('building-blocks.services', [])
     });
   })
 
+  .factory('Bookingdel', function($resource, API_URL) {
+    return $resource(API_URL + '/facilities/:facility_id/bookings/:id', {facility_id: '@facility_id',id: '@id'}, {
+      save: {
+        method: 'DELETE'
+      }
+    });
+  })
+
   .factory('Block', function($resource, API_URL) {
     return $resource(API_URL + '/facilities/:id/bookings', {id: '@id'}, {
       query: {

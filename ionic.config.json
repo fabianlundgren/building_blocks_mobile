@@ -1,4 +1,7 @@
 {
   "name": "building_blocks",
-  "app_id": "cd606483"
+  "app_id": "cd606483",
+  "integrations": {},
+  "type": "ionic1",
+  "watchPatterns": []
 }
