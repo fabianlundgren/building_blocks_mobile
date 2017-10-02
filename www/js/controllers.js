@@ -93,7 +93,7 @@ angular.module('building-blocks.controllers', [])
     $scope.delete = function (id, ids) {
       Bookingdel.delete({facility_id: id, id: ids}, function (response) {
         $scope.message = $scope.facilities.name;
-        $scope.messageex = 'Tack för din bokning av ';
+        $scope.messageex = 'Din bokning är nu avbokad för ';
         Book.query($stateParams.booking, function(response) {
           $scope.timeslots = response;
           Facilities.query($stateParams.booking, function(response) {
@@ -109,11 +109,11 @@ angular.module('building-blocks.controllers', [])
 
       });
     };
-        
+
     $scope.openDatePicker = function (id, date, start_time, end_time) {
       Booking.save({facility_id: id, start_time: date +" "+start_time, end_time: date +" "+end_time, name: "tenant"  }, function (response) {
-        $scope.message = $scope.facilities.name;
-        $scope.messageex = 'Tack för din bokning av ';
+        $scope.message = response.message;
+        $scope.error = response.error;
         Book.query($stateParams.booking, function(response) {
           $scope.timeslots = response;
           Facilities.query($stateParams.booking, function(response) {
@@ -146,6 +146,8 @@ angular.module('building-blocks.controllers', [])
 
   .controller('FacilityController', function ($scope, $q, $state, Facility, ionicDatePicker) {
     $scope.facilities = Facility.query();
+    var bok_dur = $scope.facilities.bok_dur;
+      console.log($scope.facilities.bok_dur);
     function navigateToPage(date) {
       $state.go('book', {booking: {date: date, id: $scope.id}});
     }

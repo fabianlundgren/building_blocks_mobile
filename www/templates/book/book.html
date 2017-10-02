@@ -12,20 +12,59 @@
       <h5 class="bobe" style="color: #000;">Beskrivning</h5> <span style="color: #000;">{{facilities.description}}</span>
       <br><img src="../img/openlab{{facilities.name}}.png" style="width: 60%; height: 60%;">
       <h5 class="bobe" style="color: #000;">Regler</h5> <span style="color: #000;">{{facilities.rules}}</span>
-      <p ng-if="error" style="color: #000;">{{error}}</p>
+      <p ng-if="error" style="color: red;">{{error}}</p>
       <br>
-      <p class="bobe" ng-if="message" style="color: #000;">{{messageex}}{{message}}</p>
+      <p class="bobe" ng-if="message" style="color: #000;">{{message}}</p>
+    </div>
+    <div ng-if="facilities.dyntime == 'on'">
+    <div class="list">
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Start time
+        </div>
+         <select ng-model="start_time" name="bookingInfo">
+           <option value="" disabled selected>Select your booking time</option>
+           <option value="{{timeslot.value}}" ng-repeat="timeslot in timeslots" ng-if="timeslot.time" type="time">{{timeslot.time}}</option>
+         </select>
+      </label>
+      <label class="item item-input item-select">
+         <div class="input-label">
+           End time
+         </div>
+        <select ng-model="end_time" name="bookingInfo">
+           <option value="" disabled selected>Select your booking end time</option>
+           <option value="{{timeslot.value}}" ng-repeat="timeslot in timeslots" ng-if="timeslot.time" type="time">{{timeslot.time}}</option>
+        </select>
+      </label>
+      <label class="item">
+        <div ng-if="facilities.min">
+          <h4 class="unavailblemax" style="color: red;"> Max 3 bookings </h4>
+        </div>
+      <div ng-if="facilities.max">
+        <div ng-if="end_time == null" >
+          <div class="booked">
+        <div style="margin-top:10px"><h2 class="unavailble"> Booka rum {{facilities.name}}</h2></div>
+        </div>
+      </div>
+      </div>
+
+      <div ng-if="facilities.max">
+        <div ng-if="end_time" >
+          <button ng-if="start_time" ng-if="end_time" class="button" style="background-color:rgba(0,0,0,0); width: 113%;" ng-click="openDatePicker(id, date, start_time, end_time)">
+          <div class="unbooked">
+            <div style="margin-top:10px"><p ng-if="error" style="color: red;">{{error}}</p> Booka rum {{facilities.name}}</div>
+          </div>
+         </button>
+      </div>
+        </div>
+      </label>
+    </div>
     </div>
 
-    <div class="list">
-      <div class="item range range-positive">
-        <i class="icon ion-ios-sunny-outline"></i>
-        <input type="range" name="volume" min="0" max="100" value="33">
-        <i class="icon ion-ios-sunny"></i>
-      </div>
-    </div>
     <div class="coli" ng-if="timeslots" ng-repeat="timeslot in timeslots">
-      <div ng-if="timeslot.max">
+        <div ng-if="facilities.dyntime == 'off'">
+      <div ng-if="timeslot.start_time">
+      <div ng-if="facilities.max">
         <button class="button" style="background-color:rgba(0,0,0,0); width: 113%;" ng-if="!timeslot.bookt" ng-click="openDatePicker(id, date, timeslot.start_time, timeslot.end_time)">
       <div class="unbooked">
        <h4 class="availble"> Boka </h4>
@@ -34,7 +73,9 @@
       </div>
       </button>
     </div>
-    <div ng-if="timeslot.min">
+    </div>
+    <div ng-if="timeslot.start_time">
+    <div ng-if="facilities.min">
       <div ng-if="!timeslot.bookt" >
     <div class="bookedmax">
      <h4 class="unavailblemax"> Max 3 bookings </h4>
@@ -43,13 +84,17 @@
     </div>
   </div>
   </div>
+  </div>
+  </div>
         <div ng-if="timeslot.bookt">
           <div class="booked">
             <h4 class="unavailble"> Bokad av {{timeslot.name}} </h4>
             {{date}} {{timeslot.start_time}} - {{timeslot.end_time}}
           </br>
+          <div ng-if="timeslot.my">
             <button class="button icon ion-close-circled" style="background-color:rgba(255,255,255,0); color: #fff; width: 5%; height: 5%"; ng-click="delete(id, timeslot.ids)">
             </button>
+            </div>
           </div>
         </div>
       </div>
