@@ -1,6 +1,6 @@
 <ion-view class="user" title='<img class="title-image" src="img/logoFinal.png" />'>
   <ion-content class="padding">
-    <h3 class="title">Welcome to Building Blockz</h3>
+    <h3 class="title">Välkommen till Building Blockz</h3>
     <br>
     <div ng-if="errors" ng-repeat="error in errors">
       <p>{{error}}</p>
@@ -10,9 +10,9 @@
         <input type="email" name="email" ng-model="loginData.email" placeholder="Email" />
       </label>
       <label class="item item-input">
-        <input type="password" name="password" ng-model="loginData.password"  placeholder="Password" />
+        <input type="password" name="password" ng-model="loginData.password"  placeholder="Lösenord" />
       </label>
-      <button type="submit" class="button button-full button-light" ng-click="handleLgnBtnClick()">Sign in</button>
+      <button type="submit" class="button button-full button-light" ng-click="handleLgnBtnClick()">Logga in</button>
     </div>
   </ion-content>
 </ion-view>
