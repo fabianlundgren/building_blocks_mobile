@@ -7,7 +7,6 @@
     <img class="title-image2" src="img/logoFinal.png" />
   </ion-nav-title>
   <ion-content>
-    <h3 class="title">NYHETER</h3>
     <div class="col" ng-if="news" ng-repeat="news in news | limitTo:-3 | orderBy:'time':true">
       <div class="list card">
         <div class="item item-divider">
