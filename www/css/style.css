@@ -340,3 +340,7 @@ h3 {
   color: #fff;
   margin-top: 1px;
 }
+
+.item-text-wrap{
+  align-items: center;
+}

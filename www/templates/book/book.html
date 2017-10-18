@@ -9,6 +9,7 @@
   <ion-content class="book">
     <div class="desc">
       <h3 class="title" style="color: #000;">{{facilities.name}}</h3>
+      <h5 class="bobe" style="color: #000;">{{date}}</h5>
       <h5 class="bobe" style="color: #000;">Beskrivning</h5> <span style="color: #000;">{{facilities.description}}</span>
       <br><img src="../img/openlab{{facilities.name}}.png" style="width: 60%; height: 60%;">
       <h5 class="bobe" style="color: #000;">Regler</h5> <span style="color: #000;">{{facilities.rules}}</span>
@@ -92,7 +93,7 @@
             {{date}} {{timeslot.start_time}} - {{timeslot.end_time}}
           </br>
           <div ng-if="timeslot.my">
-            <button class="button icon ion-close-circled" style="background-color:rgba(255,255,255,0); color: #fff; width: 5%; height: 5%"; ng-click="delete(id, timeslot.ids)">
+            <button class="button icon ion-close-circled" style="background-color:rgba(0,255,255,0); color: #fff; width: 5%; height: 5%"; ng-click="delete(id, timeslot.ids)">
             </button>
             </div>
           </div>

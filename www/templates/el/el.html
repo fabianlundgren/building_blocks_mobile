@@ -11,12 +11,12 @@
     <div ng-repeat="timelists in timelists">
       <div class="list card">
         <div class="item item-divider">
-         {{timelists.name}}
+         Rum {{timelists.name}}
         </div>
         <div class="item item-text-wrap">
           {{timelists.start_time}} - {{timelists.end_time}}
         </br>
-          <button class="button icon ion-close-circled" style="background-color:rgba(0,255,255,1); color: #fff; width: 5%; height: 5%"; ng-click="delete(timelists.id, timelists.idb)">
+          <button class="button icon ion-android-cancel" ng-click="delete(timelists.id, timelists.idb)">
           </button>
       </div>
       </div>
