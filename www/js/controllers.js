@@ -53,20 +53,20 @@ angular.module('building-blocks.controllers', [])
   })
 
 
-  .controller('ElController', function ($scope, $state) {
+  .controller('ElController', function ($stateParams, $scope, $state, Bookingdel, Timelists) {
+    $scope.timelists = Timelists.query();
+    $scope.delete = function (id, idb) {
+      Bookingdel.delete({facility_id: id, id: idb}, function (response) {
+        $scope.message = $scope.timelists.name;
+        $scope.messageex = 'Din bokning är nu avbokad för ';
+        Timelists.query($stateParams.timelists, function (response) {
+          $scope.timelists = response;
+        })
+      });
+    }
     $scope.go_to_home = function() {
       $state.go('home');
     }
-    $scope.colors = ['#23c1a0', '#ffffff'];
-
-
-
-    $scope.labels = ['Förbrukning', 'Tuesday'];
-    $scope.data = [
-      [65],[40],
-    ];
-
-
   })
 
 
@@ -158,7 +158,7 @@ angular.module('building-blocks.controllers', [])
       },
       disabledDates: [],
       from: new Date(), //Optional
-      to: new Date(new Date().getTime()+(7*24*60*60*1000)), //Optional
+      to: new Date(new Date().getTime()+(6*24*60*60*1000)), //Optional
       inputDate: new Date(),      //Optional
       mondayFirst: true,          //Optional
       disableWeekdays: [],       //Optional

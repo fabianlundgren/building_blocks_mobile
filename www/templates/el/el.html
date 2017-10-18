@@ -7,20 +7,19 @@
     <img class="title-image2" src="img/logoFinal.png" />
   </ion-nav-title>
   <ion-content>
-    <div class="contact">
-      <div class="card-contact" style="height: 30%; width: 95%">
-        <div class="list-card">
-          <div class="item item-divider">
-            <h3 style="text-align: center;">Din veckoförbrukning</h3>
-          </div>
-          <div class="item item-text-wrap">
-            <canvas id="base" class="chart-bar"
-                    chart-data="data" chart-labels="labels" chart-colors="colors"
-                    chart-dataset-override="datasetOverride" >
-            </canvas>
-          </div>
+    <h3 class="title">Din bokningar</h3><br>
+    <div ng-repeat="timelists in timelists">
+      <div class="list card">
+        <div class="item item-divider">
+         {{timelists.name}}
         </div>
+        <div class="item item-text-wrap">
+          {{timelists.start_time}} - {{timelists.end_time}}
+        </br>
+          <button class="button icon ion-close-circled" style="background-color:rgba(0,255,255,1); color: #fff; width: 5%; height: 5%"; ng-click="delete(timelists.id, timelists.idb)">
+          </button>
       </div>
-    </div>
+      </div>
+      </div>
   </ion-content>
 </ion-view>

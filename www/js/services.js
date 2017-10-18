@@ -60,6 +60,15 @@ angular.module('building-blocks.services', [])
     });
   })
 
+  .factory('Timelists', function($resource, API_URL) {
+    return $resource(API_URL + '/timelists', {}, {
+      query: {
+        method: 'GET',
+        isArray: true
+      },
+    });
+  })
+
   .factory('Book', function($resource, API_URL) {
     return $resource(API_URL + '/facilities/:id/timeslots', {id: '@id'}, {
       query: {
