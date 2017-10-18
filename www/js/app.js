@@ -120,6 +120,12 @@ angular.module('building-blocks', ['ionic', 'building-blocks.controllers', 'buil
         url: '/contact',
             templateUrl: 'templates/contact/contact.html',
             controller: 'HomeController'
+      })
+
+      .state('feedback', {
+        url: '/feedback',
+            templateUrl: 'templates/feedback/feedback.html',
+            controller: 'HomeController'
       });
 
     $urlRouterProvider.otherwise('/');

@@ -7,19 +7,19 @@
     <img class="title-image2" src="img/logoFinal.png" />
   </ion-nav-title>
   <ion-content class="help-request">
-    <h3 class="title-black">MESSAGE</h3>
+    <h3 class="title-black">Vad tycker du? Ge oss gärna feedback!</h3>
     <p ng-if="error">&nbsp &nbsp {{error}}</p>
     <p ng-if="message">&nbsp &nbsp {{message}}</p>
     <div class="inner">
           <label class="item item-input">
-           <span class="input-label">Title</span>
+           <span class="input-label">Ämne</span>
            <input type="text" ng-model="help_request.title">
          </label>
           <label class="item item-input">
-        <textarea rows="4" col="12" required ng-model="help_request.message" placeholder="Message"></textarea>
+        <textarea rows="4" col="12" required ng-model="help_request.message" placeholder="Meddelande"></textarea>
          </label>
           <ul class="list">
-            <li class="item item-toggle">
+            <!-- <li class="item item-toggle">
               <h3>Urgent</h3>
               <label class="toggle toggle-assertive">
                 <input type="checkbox" ng-model="help_request.urgent">
@@ -29,8 +29,8 @@
                </label>
             </li>
           </ul>
-          <label class="item">
-            <button class="button button-block company-color" ng-click="createHelpRequest()">Send</button>
+          <label class="item"> -->
+            <button class="button button-block company-color" ng-click="createHelpRequest()">Skicka!</button>
           </label>
         </div>
       </div>
